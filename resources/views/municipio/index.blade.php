@@ -12,6 +12,7 @@
   <body>
     <div class="container">
       <h1>Listado de Municipios</h1>
+      <a href="{{route('municipios.create')}}" class= "btn btn-success">ADD</a>
         <table class="table">
             <thead>
                 <tr>
@@ -26,15 +27,12 @@
                 <tr>
                 <th scope="row">{{$municipio->muni_codi}}</th>
                 <td>{{ $municipio->muni_nomb }}</td>
-                <td>{{ $municipio->depa_codi }}</td>
-                <td>Action</td>
+                <td>{{ $municipio->depa_nomb }}</td>
+                <td><span> Action </span></td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
-    </div>
-    
-
-    
+     </div> 
    </body>
 </html>
