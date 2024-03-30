@@ -4,12 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComunaController;
 use App\Http\Controllers\MunicipioController;
 use App\Http\Controllers\DepartamentoController;
+use App\Http\Controllers\PaisController;
 
 Route::get('/', function () {
     return view('welcome'); 
 //  esta ruta maneja el welcome que es la vista
 });
- 
+
+ //comuna rutas
 Route::get('/comunas',[ComunaController::class, 'index'])->name('comunas.index');
 Route::post('/comunas',[ComunaController::class, 'store'])->name('comunas.store');
 Route::get('/comunas/create',[ComunaController::class, 'create'])->name('comunas.create');
@@ -30,3 +32,5 @@ Route::get('/departamentos/create',[DepartamentoController::class, 'create'])->n
 Route::delete('/departamentos/{departamento}',[DepartamentoController::class, 'destroy'])->name('departamentos.destroy');
 Route::put('/departamentos/{departamento}',[DepartamentoController::class, 'update'])->name('departamentos.update');
 Route::get('/departamentos/{departamento}/edit',[DepartamentoController::class, 'edit'])->name('departamentos.edit');
+//ruta pais
+Route::get('/paises',[PaisController::class, 'index'])->name('paises.index');
